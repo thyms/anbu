@@ -53,11 +53,11 @@ setup-heroku:
 	heroku config:add APP_ENV=stubulator01   --app anbu-core-stub01
 
 setup-travis:
-	cd presentation && travis encrypt $(heroku auth:token) --add deploy.api_key --skip-version-check && ga && gcm "@thyms updated heroku deployment key."
-	cd presentation-stubulator && travis encrypt $(heroku auth:token) --add deploy.api_key --skip-version-check && ga && gcm "@thyms updated heroku deployment key."
-	cd core && travis encrypt $(heroku auth:token) --add deploy.api_key --skip-version-check && ga && gcm "@thyms updated heroku deployment key."
-	cd core-stubulator && travis encrypt $(heroku auth:token) --add deploy.api_key --skip-version-check && ga && gcm "@thyms updated heroku deployment key."
-	ga && gcm "@thyms updated heroku deployment key."
+	cd presentation && travis encrypt $(heroku auth:token) --add deploy.api_key --skip-version-check && git add -A && git commit -m "@thyms updated heroku deployment key."
+	cd presentation-stubulator && travis encrypt $(heroku auth:token) --add deploy.api_key --skip-version-check && git add -A && git commit -m "@thyms updated heroku deployment key."
+	cd core && travis encrypt $(heroku auth:token) --add deploy.api_key --skip-version-check && git add -A && git commit -m "@thyms updated heroku deployment key."
+	cd core-stubulator && travis encrypt $(heroku auth:token) --add deploy.api_key --skip-version-check && git add -A && git commit -m "@thyms updated heroku deployment key."
+	git add -A && git commit -m "@thyms updated heroku deployment key."
 	git push
 
 test-app-ci:
