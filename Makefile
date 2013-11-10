@@ -52,6 +52,14 @@ setup-heroku:
 	heroku config:add APP_ENV=prod01         --app anbu-core-prod01
 	heroku config:add APP_ENV=stubulator01   --app anbu-core-stub01
 
+setup-travis:
+	cd presentation && travis encrypt $(heroku auth:token) --add deploy.api_key --skip-version-check && ga && gcm "@thyms updated heroku deployment key."
+	cd presentation-stubulator && travis encrypt $(heroku auth:token) --add deploy.api_key --skip-version-check && ga && gcm "@thyms updated heroku deployment key."
+	cd core && travis encrypt $(heroku auth:token) --add deploy.api_key --skip-version-check && ga && gcm "@thyms updated heroku deployment key."
+	cd core-stubulator && travis encrypt $(heroku auth:token) --add deploy.api_key --skip-version-check && ga && gcm "@thyms updated heroku deployment key."
+	ga && gcm "@thyms updated heroku deployment key."
+	git push
+
 test-app-ci:
 	cd presentation-functional && make test-app-ci
 	cd core-functional && make test-app-ci
