@@ -10,7 +10,7 @@ checkout-project:
 	cd core-functional && git remote rm origin && git remote add origin git@github.com:thyms/anbu-core-functional.git && git fetch && git checkout develop
 	cd core-stubulator && git remote rm origin && git remote add origin git@github.com:thyms/anbu-core-stubulator.git && git fetch && git checkout develop
 
-setup-project:
+setup-app:
 	make checkout-project
 	cd presentation && make setup-app
 	cd presentation-stubulator && make setup-app
