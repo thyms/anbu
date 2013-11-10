@@ -26,6 +26,18 @@ setup-git:
 	cd core-functional && git remote rm origin && git remote add origin git@github-FILMSTER.com:thyms/anbu-core-functional.git && git fetch && git checkout develop
 	cd core-stubulator && git remote rm origin && git remote add origin git@github-FILMSTER.com:thyms/anbu-core-stubulator.git && git fetch && git checkout develop
 
+setup-heroku:
+	heroku apps:create --remote functional01 --app anbu-presentation-func01
+	heroku apps:create --remote qa01         --app anbu-presentation-qa01
+	heroku apps:create --remote demo01       --app anbu-presentation-demo01
+	heroku apps:create --remote stage01      --app anbu-presentation-stage01
+	heroku apps:create --remote prod01       --app anbu-presentation-prod01
+	heroku config:add NODE_ENV=functional01  --app anbu-presentation-func01
+	heroku config:add NODE_ENV=qa01          --app anbu-presentation-qa01
+	heroku config:add NODE_ENV=demo01        --app anbu-presentation-demo01
+	heroku config:add NODE_ENV=stage01       --app anbu-presentation-stage01
+	heroku config:add NODE_ENV=prod01        --app anbu-presentation-prod01
+
 test-app-ci:
 	cd presentation-functional && make test-app-ci
 	cd core-functional && make test-app-ci
