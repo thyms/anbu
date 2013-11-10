@@ -1,0 +1,18 @@
+[submodule "presentation-stubulator"]
+	path = presentation-stubulator
+	url = https://github.com/thyms/anbu-presentation-stubulator.git
+[submodule "presentation-functional"]
+	path = presentation-functional
+	url = https://github.com/thyms/anbu-presentation-functional.git
+[submodule "presentation"]
+	path = presentation
+	url = https://github.com/thyms/anbu-presentation.git
+[submodule "core"]
+	path = core
+	url = https://github.com/thyms/anbu-core.git
+[submodule "core-functional"]
+	path = core-functional
+	url = https://github.com/thyms/anbu-core-functional.git
+[submodule "core-stubulator"]
+	path = core-stubulator
+	url = https://github.com/thyms/anbu-core-stubulator.git
