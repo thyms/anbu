@@ -15,10 +15,10 @@ namespace :project do
     puts "======================================================"
     puts "Pushing project and submodules...please wait"
     puts "======================================================"
-    sh('git push')
     ['core', 'core-functional', 'core-stubulator', 'presentation', 'presentation-functional', 'presentation-stubulator'].each { |project|
       sh %{cd #{project} && git push --all}
     }
+    sh('git push --all')
     puts
     puts "======================================================"
     puts "Pushing has been completed successfully..."
