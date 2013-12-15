@@ -16,7 +16,7 @@ namespace :project do
     puts "Pushing project and submodules...please wait"
     puts "======================================================"
     sh('git push')
-    ['presentation', 'presentation-functional', 'presentation-stubulator'].each { |project|
+    ['core', 'core-functional', 'core-stubulator', 'presentation', 'presentation-functional', 'presentation-stubulator'].each { |project|
       sh %{cd #{project} && git push}
     }
     puts
