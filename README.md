@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/thyms/anbu.png?branch=template-0.4)](https://travis-ci.org/thyms/anbu)
+
 ## Overview ##
 Parent project for project anbu.
 
