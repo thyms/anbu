@@ -3,12 +3,7 @@
 checkout-project:
 	git checkout develop
 	git submodule update --init --recursive
-	cd presentation && git remote rm origin && git remote add origin git@github.com:thyms/anbu-presentation.git && git fetch && git checkout develop
-	cd presentation-functional && git remote rm origin && git remote add origin git@github.com:thyms/anbu-presentation-functional.git && git fetch && git checkout develop
-	cd presentation-stubulator && git remote rm origin && git remote add origin git@github.com:thyms/anbu-presentation-stubulator.git && git fetch && git checkout develop
-	cd core && git remote rm origin && git remote add origin git@github.com:thyms/anbu-core.git && git fetch && git checkout develop
-	cd core-functional && git remote rm origin && git remote add origin git@github.com:thyms/anbu-core-functional.git && git fetch && git checkout develop
-	cd core-stubulator && git remote rm origin && git remote add origin git@github.com:thyms/anbu-core-stubulator.git && git fetch && git checkout develop
+  make setup-git
 
 setup-project:
 	make checkout-project
@@ -18,13 +13,13 @@ setup-project:
 	cd core-stubulator && make setup-app
 
 setup-git:
-	git remote rm origin && git remote add origin git@github-FILMSTER.com:thyms/anbu.git && git fetch && git checkout develop
-	cd presentation && git remote rm origin && git remote add origin git@github-FILMSTER.com:thyms/anbu-presentation.git && git fetch && git checkout develop
-	cd presentation-functional && git remote rm origin && git remote add origin git@github-FILMSTER.com:thyms/anbu-presentation-functional.git && git fetch && git checkout develop
-	cd presentation-stubulator && git remote rm origin && git remote add origin git@github-FILMSTER.com:thyms/anbu-presentation-stubulator.git && git fetch && git checkout develop
-	cd core && git remote rm origin && git remote add origin git@github-FILMSTER.com:thyms/anbu-core.git && git fetch && git checkout develop
-	cd core-functional && git remote rm origin && git remote add origin git@github-FILMSTER.com:thyms/anbu-core-functional.git && git fetch && git checkout develop
-	cd core-stubulator && git remote rm origin && git remote add origin git@github-FILMSTER.com:thyms/anbu-core-stubulator.git && git fetch && git checkout develop
+	git remote rm origin && git remote add origin git@github-thyms.com:thyms/anbu.git && git fetch && git checkout develop
+	cd presentation && git remote rm origin && git remote add origin git@github-thyms.com:thyms/anbu-presentation.git && git fetch && git checkout develop
+	cd presentation-functional && git remote rm origin && git remote add origin git@github-thyms.com:thyms/anbu-presentation-functional.git && git fetch && git checkout develop
+	cd presentation-stubulator && git remote rm origin && git remote add origin git@github-thyms.com:thyms/anbu-presentation-stubulator.git && git fetch && git checkout develop
+	cd core && git remote rm origin && git remote add origin git@github-thyms.com:thyms/anbu-core.git && git fetch && git checkout develop
+	cd core-functional && git remote rm origin && git remote add origin git@github-thyms.com:thyms/anbu-core-functional.git && git fetch && git checkout develop
+	cd core-stubulator && git remote rm origin && git remote add origin git@github-thyms.com:thyms/anbu-core-stubulator.git && git fetch && git checkout develop
 
 setup-heroku:
 	heroku apps:create --remote func01       --app anbu-presentation-func01
