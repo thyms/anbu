@@ -3,7 +3,7 @@
 checkout-project:
 	git checkout develop
 	git submodule update --init --recursive
-  make setup-git
+	make setup-git
 
 setup-project:
 	make checkout-project
